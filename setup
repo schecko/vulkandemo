@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ $1 = "clean" ]]; then
+	rm -r build
+else
+	mkdir -p build
+	pushd build
+		cmake .. -DCMAKE_GENERATOR_PLATFORM=x64 -A x64 -T host=x64
+	popd
+fi
+
+
